@@ -9,6 +9,7 @@ para solucionar esto, usaremos los siguientes comandos
 
 ``
 git lfs checkout
+
 git lfs fetch
 ``
 
