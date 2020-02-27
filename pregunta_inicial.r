@@ -1,0 +1,15 @@
+  install.packages("sqldf")
+  install.packages("gsubfn")
+  install.packages("proto")
+  install.packages("RSQLite")
+  library(sqldf)
+  library(gsubfn)
+  library(proto)
+  library(RSQLite)
+  
+  
+  events <- subset(events,select = -text)
+pregunta_inicial <- subset(events,select = c(side, id_odsp, event_type, is_goal))
+pregunta_inicial <- sqldf('SELECT * FROM pregunta_inicial WHERE event_type = 1')
+pregunta_inicial <- subset(pregunta_inicial,select=-event_type)
+agrupados <- sqldf('SELECT side,id_odsp,is_goal,count(is_goal) as tiros_totales FROM pregunta_inicial GROUP BY id_odsp')
