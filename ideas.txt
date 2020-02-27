@@ -1,0 +1,4 @@
+
+ 1. Predecir nº de goles en base a los tiros y donde se juega (local o visitante).
+ 2. Predecir donde se juega en base al numero de tiros y de goles. 
+ 3. Predecir la liga de pertenencia del equipo en base al número de faltas (O cualquier otro dato).
