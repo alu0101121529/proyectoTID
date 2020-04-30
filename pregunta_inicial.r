@@ -75,8 +75,23 @@ inner$events_name <- factor(inner$event_type, levels = c(1, 2, 3, 4, 5, 6, 7, 8,
                   "FreeKickWon", "Offside", "HandBall", "Penalty"))
 
 # Gráficas
-p <- ggplot(inner, aes(x=events_name)) + geom_bar()
+# Distribución de eventos
+ggplot(inner, aes(y=events_name)) +
+  geom_bar(color="black", size=1, fill="#0072B2") +
+  ggtitle("Events distribution") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=15)
+  )
 
+# Distribución de datos por ligas
+ggplot(inner, aes(y=league)) +
+  geom_bar(color="black", size=1, fill="orange") +
+  ggtitle("Leagues distribution") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=15)
+  )
 
 
 
